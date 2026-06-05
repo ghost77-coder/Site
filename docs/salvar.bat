@@ -1,29 +1,31 @@
 @echo off
 title Salvar Projeto Ghost
 echo ===========================================
-echo   PREPARANDO PARA SALVAR...
+echo   VERIFICANDO O QUE MUDOU...
 echo ===========================================
+git status
+pause
 
-:: Adiciona os arquivos
+echo ===========================================
+echo   PREPARANDO O COMMIT...
+echo ===========================================
 git add .
-
-:: Obriga a digitar um nome, se deixar vazio ele repete a pergunta
-:pedir_nome
-set "msg="
 set /p "msg=Digite o nome DESTE salvamento: "
-if "%msg%"=="" (
-    echo.
-    echo O nome nao pode ficar vazio, parceiro! Digita ai.
-    goto pedir_nome
-)
-
-:: Faz o commit com o nome que voce digitou
+if "%msg%"=="" set msg=Update Rapido %date% %time%
 git commit -m "%msg%"
 
-:: Envia para o GitHub
+echo ===========================================
+echo   ENVIANDO PARA O GITHUB...
+echo ===========================================
 git push origin main
 
-echo ===========================================
-echo   SALVO COM SUCESSO: "%msg%"
-echo ===========================================
+if %errorlevel% neq 0 (
+    echo.
+    echo [ERRO] O PUSH FALHOU! Alguma coisa travou na internet ou no Git.
+    echo Tente rodar 'git pull origin main' antes de tentar de novo.
+) else (
+    echo.
+    echo [SUCESSO] Tudo subiu para o GitHub!
+)
+
 pause
