@@ -1,4 +1,3 @@
-# this is my first website now on github!
+*esse site eu fiz bem no tedio mesmo
 
-**why did i move to github:** i really wanted to add more things to my site and the default neocities editor was really
-limited and i really wanted a better editor also i preffer dealing with gits and also being able to use a external editor really easily, for example you can add a plugin in vscode soo that you can push the code directly to a git repo with no issues.
+vai ter mil erros mais eu quero mandar pro rushb mesmo que a gente n converse mais so pela zueira pq eu falei que ia fazer um site melhor que o dele sendo que eu so usando o dele de bate inves de criar um (eu juro que vo fazer um do zero dps(bemmmmmmmmmmmmmmmmmmmmm dps)) infim o site ta ai (todo fudido)
