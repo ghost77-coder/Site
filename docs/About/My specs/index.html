@@ -11,14 +11,31 @@
       padding: 20px;
     }
     
-    p:not(.hidden), h1:not(.hidden), h2:not(.hidden) {
+    p, h1, h2 {
       color: white;
     }
     
-    a:link { color: red; text-decoration: none; }
-    a:visited { color: #8b0000; text-decoration: none; }
-    a:hover { color: #00ff66; text-decoration: underline; }
-    a:active { color: lightgreen; text-decoration: underline; }
+    /* Estilo dos links */
+    a:link {
+      color: red;
+      background-color: transparent;
+      text-decoration: none;
+    }
+    a:visited {
+      color: #8b0000;
+      background-color: transparent;
+      text-decoration: none;
+    }
+    a:hover {
+      color: #00ff66;
+      background-color: transparent;
+      text-decoration: underline;
+    }
+    a:active {
+      color: lightgreen;
+      background-color: transparent;
+      text-decoration: underline;
+    }
 
     .links-lista a {
       display: block;
@@ -32,8 +49,8 @@
   <h1>Especificações</h1>
 
   <div class="links-lista">
-    <!-- Corrigido para subir dois níveis e encontrar a Home -->
-    <a href="../../index.html">← Voltar para a Home</a>
+    <!-- Link corrigido para a sua URL oficial -->
+    <a href="/Site/index.html">← Voltar para a Home</a>
     <a href="spec.jpg">meu pc página 1</a>
     <a href="spec2.png">meu pc página 2</a>
   </div>
