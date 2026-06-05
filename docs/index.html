@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=0.8">
+  <title>O site foda do Ghost</title>
+  <link rel="icon" type="image/x-icon" href="eve-owo.png">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'JetBrains Mono', monospace; /* Aplicando a fonte nova */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    #canvas-basic {
+      position: fixed;
+      display: block;
+      width: 100vw;
+      height: 105vh;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+    }
+
+    .niko {        
+      width: 100px;        
+      height: 100px;        
+      border-radius: 10px;        
+      float: right;      
+    }    
+
+    /* Estilo dos Links Gerais */
+    a:link {
+      color: #00ff66; /* Um verde neon mais vivo */
+      background-color: transparent;
+      text-decoration: none;
+    }
+    a:visited {
+      color: #ff79c6; /* Rosa neon para os visitados */
+      background-color: transparent;
+      text-decoration: none;
+    }
+    a:hover {
+      color: #ff5555; /* Vermelho ao passar o mouse */
+      background-color: transparent;
+      text-decoration: underline;
+    }
+    a:active {
+      color: #ffb86c;
+      background-color: transparent;
+      text-decoration: underline;
+    }
+
+    .collabvm {      
+      color: white;    
+    }    
+    
+    em {      
+      color: crimson;           
+      font-style: normal;    
+    }    
+    
+    h1 {      
+      color: white;    
+      z-index: 1;
+      text-shadow: 0px 0px 10px rgba(255,255,255,0.5);
+    }    
+    
+    p {      
+      color: white;    
+    }  
+    
+    .caixa {
+      background: rgba(20, 20, 20, 0.45); /* Um pouco mais escuro para destacar a fonte */
+      padding: 20px 40px;
+      border-radius: 30px;
+      box-shadow: 0px 0px 25px rgba(0,0,0,0.5);
+      text-align: center;
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(255,255,255,0.1);
+    }   
+
+    .caixa a {
+      display: block;
+      margin: 12px 0;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .evi {
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      width: 100px;
+      height: auto;
+    }
+  </style>
+</head>
+<body> 
+
+  <canvas id="canvas-basic"></canvas>
+
+  <h1>O site foda do Ghost</h1>
+
+  <div id="browser-warning" style="display: none; background: #2b2b2b; border: 1px solid #ff5555; color: white; padding: 10px; margin-bottom: 12px; margin-top: 12px; border-radius: 6px;">
+    ⚠️ i recommend browsers based on <strong>Firefox</strong> (ex.: Firefox, Mullvad, LibreWolf, Waterfox) for better privacy. ⚠️
+  </div>
+
+  <div class="caixa">
+    <a href="About/">About Me</a>
+    <a href="Coollinks/" target="_blank">Cool sites that i found</a>
+    <a href="oneshot___niko_by_thatguyfromkithro_dfvi01z.png" download>Download niko</a>
+    <a href="https://files.catbox.moe/32s3e0.reg" download>disable settings win10</a>
+    <a href="https://github.com/ghost77-coder/Site/issues/new" target="_blank">Report a bug!</a>
+    <a href="cpicker/" target="_blank">color picker</a>
+    <a href="coolapps/">cool apps that i found</a>
+    
+    <p>you should really read the about page :3</p>
+    <p>pls report any bugs you find</p>
+    <p>Made with pure love by Ghost &hearts;</p>
+  </div>
+
+  <img class="evi" src="eve-owo.png" alt="eevee uwu">
+
+  <script src="https://cdn.jsdelivr.net/npm/granim@2.0.0/dist/granim.min.js"></script>
+  <script>
+    var granimInstance = new Granim({
+        element: '#canvas-basic',
+        direction: 'diagonal',
+        isPausedWhenNotInView: true,
+        states : {
+            "default-state": {
+                gradients: [
+                    ['#0096FF', '#C400FF'],
+                    ['#FAFF00', '#FF0000'],
+                    ['#0037FF', '#000000'],
+                    ['#000000', '#0037FF'],
+                    ['#009C08', '#0037FF']
+                ]
+            }
+        }
+    });
+
+    // Detecção do navegador
+    const ua = navigator.userAgent.toLowerCase();
+    const isFirefoxFamily = ua.includes("firefox");
+    if (!isFirefoxFamily) {
+      document.getElementById("browser-warning").style.display = "block";
+    }
+  </script>
+
+</body>
+</html>

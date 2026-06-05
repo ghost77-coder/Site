@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Ghost</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+  <style>
+    body {
+      display: block;
+      background: linear-gradient(135deg, #000000, #007C06);
+      background-repeat: no-repeat;
+      background-size: cover;
+      min-height: 100vh;
+      margin: 0px;
+      padding: 0px;
+      padding-bottom: 80px;
+    }
+
+    .bottom-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      box-sizing: border-box;
+      width: 100%;
+      padding: 14px 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(10, 10, 15, 0.55);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      z-index: 50;
+    }
+
+    .socials {
+      display: flex;
+      gap: 16px;
+    }
+
+    .socials a {
+      font-size: 22px;
+      color: rgba(255, 255, 255, 0.75);
+      transition: 0.2s ease;
+    }
+
+    .socials a:hover {
+      color: rgba(255, 255, 255, 1);
+      transform: scale(1.12);
+    }
+    
+    .window {
+      width: min(900px, 95vw);
+      height: min(480px, 85vh);
+      margin: 40px auto;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(15, 15, 20, 0.40);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.6);
+      overflow: hidden;
+      font-family: system-ui, sans-serif;
+    }
+
+    .window-titlebar {
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 14px;
+      background: #001400;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .window-title {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.85);
+      font-weight: 500;
+      user-select: none;
+    }
+
+    .window-controls {
+      display: flex;
+      gap: 8px;
+    }
+
+    .window-controls .btn {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      display: inline-block;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.06);
+      transition: transform 0.15s ease, background 0.15s ease;
+    }
+
+    .window-controls .btn:hover {
+      transform: scale(1.15);
+      background: rgba(255, 255, 255, 0.16);
+    }
+
+    .window-controls .close:hover { background: rgba(255, 60, 60, 0.55); }
+    .window-controls .max:hover { background: rgba(60, 255, 150, 0.35); }
+    .window-controls .min:hover { background: rgba(255, 200, 60, 0.35); }
+
+    .window-content {
+      padding: 24px;
+      height: calc(100% - 54px);
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 17px;
+      line-height: 1.6;
+      overflow-y: auto;
+    }
+
+    .btn-specs {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 10px 20px;
+      font-weight: bold;
+      font-size: 15px;
+      color: #ff3333;
+      text-decoration: none;
+      border: 2px solid #ff3333;
+      border-radius: 8px;
+      background: transparent;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-specs:hover {
+      color: #00ff66;
+      border-color: #00ff66;
+      background: rgba(0, 255, 102, 0.05);
+      box-shadow: 0px 0px 12px rgba(0, 255, 102, 0.4);
+      transform: translateY(-2px);
+    }
+
+    .window-content::-webkit-scrollbar { width: 5px; }
+    .window-content::-webkit-scrollbar-track { background: rgba(255, 255, 255, 0.03); }
+    .window-content::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.12); border-radius: 20px; }
+    .window-content::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.2); }
+
+    .home-btn {
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 6px 12px;
+      border-radius: 12px;
+      color: rgba(255, 255, 255, 0.9);
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      transition: 0.2s ease;
+    }
+
+    .home-btn:hover {
+      background: rgba(255, 255, 255, 0.14);
+      transform: scale(1.04);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="window">
+    <div class="window-titlebar">
+      <div class="window-title">About Ghost</div>
+      <div class="window-controls">
+        <span class="btn min"></span>
+        <span class="btn max"></span>
+        <span class="btn close"></span>
+      </div>
+    </div>
+
+    <div class="window-content">
+      <p>Sou um cara curioso, gosto de mexer em tecnologia, jogos e programação, sempre procurando um jeito de aprender algo novo ou resolver um problema na raça. Curto jogos como Astroneer, Euro Truck Simulator 2, People Playground, Brick Rigs e Gang Beasts, além de gostar de testar mods e personalizações. Tenho um notebook Acer Nitro V15 e gosto de fuçar configurações para tirar o máximo desempenho possível. Também me interesso por Linux, embora hoje não seja meu sistema principal. No geral, sou alguém que aprende experimentando, faz muitas perguntas, dá umas risadas no caminho e não tem medo de quebrar a cabeça até descobrir como algo funciona.</p>
+      
+      <!-- Corrigido: Sobe uma pasta para sair de 'About' e entra na pasta 'My specs' -->
+      <a href="../My specs/index.html" class="btn-specs">➔ Acesse as especificações do meu setup</a>
+    </div>
+  </div>
+
+  <div class="bottom-bar">
+    <div class="socials">
+      <a href="https://github.com/ghost77-coder" target="_blank"><i class="fa-brands fa-github"></i></a>
+      <a href="https://www.instagram.com/p3ter.7_7?igsh=MXdlYm9kb2Jpbzh2Zg==" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+    </div>
+    <!-- Corrigido: Sobe duas pastas para voltar para a raiz do index.html principal sem dar 404 -->
+    <a href="../../index.html" class="home-btn">Go Back to Homepage</a>
+  </div>
+
+</body>
+</html>

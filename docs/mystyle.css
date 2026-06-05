@@ -1,0 +1,42 @@
+.header {      
+    color: white;    
+    }
+    bold {      
+      font-weight: bold;      
+      color: white;    }   
+      body {      
+        background-color: black;    
+        }    
+a:link {
+  color: green;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:visited {
+  color:pink;
+  background-color: white;
+  text-decoration: none;
+}
+a:hover {
+  color: red;
+  background-color: transparent;
+  text-decoration: underline;
+}
+a:active {
+  color: yellow;
+  background-color: transparent;
+  text-decoration: underline;
+}
+        .collabvm {      
+          color: white;    
+          }    
+          em {      
+            color: crimson;           
+            font-style: normal;    
+            }    
+            h1 {      
+              color: white;    
+              }    
+              p {      
+                color: white;    
+                }  

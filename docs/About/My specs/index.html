@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=0.8">
+  <title>my spec</title>
+  <style>
+    body {
+      background-color: black;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    
+    p:not(.hidden), h1:not(.hidden), h2:not(.hidden) {
+      color: white;
+    }
+    
+    /* Links começam em vermelho */
+    a:link {
+      color: red;
+      background-color: transparent;
+      text-decoration: none;
+    }
+    a:visited {
+      color: #8b0000;
+      background-color: transparent;
+      text-decoration: none;
+    }
+    /* Passa o mouse em cima: VERDE */
+    a:hover {
+      color: #00ff66;
+      background-color: transparent;
+      text-decoration: underline;
+    }
+    a:active {
+      color: lightgreen;
+      background-color: transparent;
+      text-decoration: underline;
+    }
+
+    .links-lista a {
+      display: block;
+      margin: 15px 0;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Especificações</h1>
+
+  <div class="links-lista">
+    <!-- O voltar agora joga o usuário um nível acima, de volta para a biografia -->
+    <a href="..">Voltar para Sobre</a>
+    <a href="spec.jpg">meu pc página 1</a>
+    <a href="spec2.png">meu pc página 2</a>
+  </div>
+
+</body>
+</html>

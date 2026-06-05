@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ɛ: ghost</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      padding-bottom: 60px;
+      font-family: system-ui, -apple-system, sans-serif;
+      color: white;
+      min-height: 100vh;
+      background-image: url("fundo1.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    /* Botão Voltar Superior */
+    .btn-back {
+      display: inline-block;   
+      padding: 10px 20px;              
+      background: #1a0000;             
+      color: #ff3333;                    
+      text-decoration: none;      
+      border: 2px solid #ff3333;
+      border-radius: 8px;              
+      font-weight: bold;
+      margin: 30px 0;
+      transition: all 0.3s ease;
+    }
+    .btn-back:hover {
+      color: #00ff66;
+      border-color: #00ff66;
+      background: rgba(0, 255, 102, 0.05);
+      box-shadow: 0px 0px 12px rgba(0, 255, 102, 0.4);
+      transform: scale(1.05);
+    }
+
+    /* Container de Categorias */
+    .container {
+      width: min(900px, 95vw);
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .category-box {
+      background: rgba(10, 10, 15, 0.75);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .category-box h2 {
+      margin-top: 0;
+      margin-bottom: 15px;
+      font-size: 18px;
+      color: #ff3333;
+      border-bottom: 1px solid rgba(255, 51, 51, 0.2);
+      padding-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* Grid de Links */
+    .links-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px;
+    }
+
+    /* Estilo dos Apps/Links */
+    .app-link {
+      display: block;           
+      padding: 12px;              
+      background: rgba(20, 20, 25, 0.6);             
+      color: #e0e0e0;                    
+      text-decoration: none;      
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;              
+      font-size: 14px;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      text-align: center;
+    }
+
+    .app-link:hover {
+      color: #00ff66;
+      border-color: #00ff66;
+      background: rgba(0, 255, 102, 0.04);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 255, 102, 0.15);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Botão de Voltar -->
+  <a href="../" class="btn-back"><i class="fa-solid fa-arrow-left"></i> Go back to homepage</a>
+
+  <div class="container">
+
+    <!-- CATEGORIA 1 -->
+    <div class="category-box">
+      <h2><i class="fa-solid fa-wand-magic-sparkles"></i> Customização e Interface</h2>
+      <div class="links-grid">
+        <a href="https://play.google.com/store/apps/details?id=eu.toneiv.ubktouch" target="_blank" class="app-link">OHO+ (Gestos para Android)</a>
+        <a href="https://github.com/VegaBobo/Language-Selector" target="_blank" class="app-link">Language Selector</a>
+        <a href="https://github.com/KieronQuinn/ClassicPowerMenu" target="_blank" class="app-link">Classic Power Menu</a>
+        <a href="https://play.google.com/store/apps/details?id=com.otp.octopilauncher" target="_blank" class="app-link">Octopi (Nova Alternative)</a>
+        <a href="https://github.com/nullbytepl/CarrierVanityName" target="_blank" class="app-link">Mudar Nome de Operadora (Sem Root)</a>
+        <a href="https://xdaforums.com/t/guide-change-your-carrier-name-manually-easy.1768173/" target="_blank" class="app-link">Mudar Nome de Operadora (Com Root)</a>
+        <a href="https://f-droid.org/packages/com.kaanelloed.iconeration/" target="_blank" class="app-link">Articons Customizer</a>
+        <a href="https://github.com/WSTxda/Toolkit-Tiles/releases" target="_blank" class="app-link">Toolkit Tiles</a>
+        <a href="https://github.com/RossSihovsk/LiveMedia/releases" target="_blank" class="app-link">Dynamic Island/Now Bar (Android 16)</a>
+        <a href="https://github.com/KieronQuinn/TapTap" target="_blank" class="app-link">TapTap (Toques Traseiros)</a>
+        <a href="https://github.com/cherryhoax/DiscoLauncher" target="_blank" class="app-link">Windows Phone Launcher</a>
+      </div>
+    </div>
+
+    <!-- CATEGORIA 2 -->
+    <div class="category-box">
+      <h2><i class="fa-solid = fa-gauge-high"></i> Desempenho e Sistema</h2>
+      <div class="links-grid">
+        <a href="https://gitlab.com/narektor/batt/-/releases" target="_blank" class="app-link">Batt (Saúde da Bateria)</a>
+        <a href="https://github.com/Rve27/RvKernel-Manager" target="_blank" class="app-link">RvKernel Manager</a>
+        <a href="https://f-droid.org/en/packages/com.raiiware.forcestophelper/" target="_blank" class="app-link">Force Stop Anywhere</a>
+        <a href="https://github.com/twentynine78/KeepOn" target="_blank" class="app-link">KeepOn (Caffeine/Tela Acesa)</a>
+        <a href="https://play.google.com/store/apps/details?id=com.draco.purr" target="_blank" class="app-link">Purr (Diminuir Resolução da Tela)</a>
+        <a href="https://github.com/JackEblan/Geto" target="_blank" class="app-link">Geto (Configurações por App)</a>
+        <a href="https://f-droid.org/packages/com.rbn.qtsettings/" target="_blank" class="app-link">Galaxy Max Hz</a>
+        <a href="https://play.google.com/store/apps/details?id=pro.themed.perappdownscale" target="_blank" class="app-link">Downscale Per App</a>
+        <a href="https://github.com/MDP43140/LTECleanerFOSS" target="_blank" class="app-link">LTECleaner FOSS</a>
+        <a href="https://github.com/aunchagaonkar/NetworkSwitch" target="_blank" class="app-link">Seletor de Rede 4G/5G</a>
+        <a href="https://github.com/tytydraco/Comatose" target="_blank" class="app-link">Comatose (Deep Sleep Android)</a>
+        <a href="https://schneegans.de/windows/unattend-generator/" target="_blank" class="app-link">Ignorar Configuração do Windows</a>
+      </div>
+    </div>
+
+    <!-- CATEGORIA 3 -->
+    <div class="category-box">
+      <h2><i class="fa-solid fa-gamepad"></i> Jogos e Minecraft</h2>
+      <div class="links-grid">
+        <a href="https://skmedix.pl/" target="_blank" class="app-link">SKLauncher (Minecraft Java)</a>
+        <a href="https://www.curseforge.com/minecraft-bedrock/texture-packs/durability-viewer" target="_blank" class="app-link">Durability Viewer (MCPE)</a>
+        <a href="https://github.com/AngelAuraMC/Amethyst-Android?tab=readme-ov-file#getting-amethyst" target="_blank" class="app-link">Amethyst Android</a>
+      </div>
+    </div>
+
+    <!-- CATEGORIA 4 -->
+    <div class="category-box">
+      <h2><i class="fa-solid fa-shield-halved"></i> Segurança e Privacidade</h2>
+      <div class="links-grid">
+        <a href="https://play.google.com/store/apps/details?id=com.wtmp.svdsoftware" target="_blank" class="app-link">WTMP (Quem mexeu no meu celular)</a>
+        <a href="https://github.com/PranavPurwar/AppLock" target="_blank" class="app-link">AppLock FOSS</a>
+        <a href="https://github.com/reveny/Android-Native-Root-Detector" target="_blank" class="app-link">Native Root Detector</a>
+        <a href="https://play.google.com/store/apps/details?id=com.colourswift.cssecurity" target="_blank" class="app-link">ClamAV para Android</a>
+        <a href="https://play.google.com/store/apps/details?id=com.franko.privacyguard" target="_blank" class="app-link">Privacy Guard</a>
+        <a href="https://f-droid.org/packages/org.adaway/" target="_blank" class="app-link">AdAway (Bloqueador de Anúncios)</a>
+      </div>
+    </div>
+
+    <!-- CATEGORIA 5 -->
+    <div class="category-box">
+      <h2><i class="fa-solid fa-cubes"></i> Ferramentas e Utilidades</h2>
+      <div class="links-grid">
+        <a href="https://github.com/PranavPurwar/Reef/releases/" target="_blank" class="app-link">Reef (Tempo de Tela)</a>
+        <a href="https://github.com/teamclouday/AndroidMic" target="_blank" class="app-link">AndroidMic (Celular como Microfone)</a>
+        <a href="https://f-droid.org/en/packages/com.shezik.drawanywhere/" target="_blank" class="app-link">Draw Anywhere</a>
+        <a href="https://github.com/Xposed-Modules-Repo/com.wizpizz.reddidnt" target="_blank" class="app-link">Reddid'nt</a>
+        <a href="https://github.com/crackededed/Xtra" target="_blank" class="app-link">Xtra (NewPipe para Twitch)</a>
+        <a href="https://github.com/wxxsfxyzm/InstallerX-Revived" target="_blank" class="app-link">InstallerX Revived</a>
+        <a href="https://github.com/ViscousPot/GitSync" target="_blank" class="app-link">GitSync Android</a>
+        <a href="https://github.com/rosuH/EasyWatermark" target="_blank" class="app-link">EasyWatermark</a>
+        <a href="https://github.com/aeri/Atalaya" target="_blank" class="app-link">Atalaya (Informações de Rede)</a>
+        <a href="https://github.com/yume-chan/VolumeManager" target="_blank" class="app-link">Volume Manager</a>
+        <a href="https://f-droid.org/packages/cn.ac.lz233.tarnhelm" target="_blank" class="app-link">Tarnhelm (Link Cleaner)</a>
+        <a href="https://apt.izzysoft.de/fdroid/index/apk/com.metrolist.music" target="_blank" class="app-link">Metrolist Music</a>
+        <a href="https://github.com/nethical6/digipaws" target="_blank" class="app-link">Digipaws</a>
+        <a href="https://github.com/nonbili/Nora" target="_blank" class="app-link">Nora Web Apps</a>
+        <a href="https://play.google.com/store/apps/details?id=org.virock.virtualshufflev2" target="_blank" class="app-link">Virtual Shuffle</a>
+        <a href="https://play.google.com/store/apps/details?id=com.endel.endel" target="_blank" class="app-link">Endel (White Noise)</a>
+        <a href="https://codeberg.org/Freeyourgadget/Gadgetbridge" target="_blank" class="app-link">Gadgetbridge</a>
+        <a href="https://github.com/anonfaded/FadCam" target="_blank" class="app-link">FadCam</a>
+        <a href="https://wiki.termux.com/wiki/Termux:API" target="_blank" class="app-link">Termux:API (Android 14+)</a>
+        <a href="https://play.google.com/store/apps/details?id=de.lemke.oneurl" target="_blank" class="app-link">OneURL</a>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
