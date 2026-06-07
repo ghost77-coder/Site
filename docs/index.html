@@ -2,163 +2,219 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=0.8">
-  <title>O site foda do Ghost</title>
-  <link rel="icon" type="image/x-icon" href="eve-owo.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ghost Central // Home</title>
   
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+  <!-- Font Awesome para ícones irados -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: 'JetBrains Mono', monospace; /* Aplicando a fonte nova */
+      margin: 0;
+      padding: 0;
+      font-family: 'Courier New', Courier, monospace;
+      color: #00e5ff;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100vh;
-      margin: 0;
+      overflow-x: hidden;
     }
 
-    #canvas-basic {
+    /* Configuração do Vídeo de Fundo Animado */
+    .bg-video {
       position: fixed;
-      display: block;
-      width: 100vw;
-      height: 105vh;
-      top: 0;
       right: 0;
       bottom: 0;
-      left: 0;
-      z-index: -1;
-    }
-
-    .niko {        
-      width: 100px;        
-      height: 100px;        
-      border-radius: 10px;        
-      float: right;      
-    }    
-
-    /* Estilo dos Links Gerais */
-    a:link {
-      color: #00ff66; /* Um verde neon mais vivo */
-      background-color: transparent;
-      text-decoration: none;
-    }
-    a:visited {
-      color: #ff79c6; /* Rosa neon para os visitados */
-      background-color: transparent;
-      text-decoration: none;
-    }
-    a:hover {
-      color: #ff5555; /* Vermelho ao passar o mouse */
-      background-color: transparent;
-      text-decoration: underline;
-    }
-    a:active {
-      color: #ffb86c;
-      background-color: transparent;
-      text-decoration: underline;
-    }
-
-    .collabvm {      
-      color: white;    
-    }    
-    
-    em {      
-      color: crimson;           
-      font-style: normal;    
-    }    
-    
-    h1 {      
-      color: white;    
-      z-index: 1;
-      text-shadow: 0px 0px 10px rgba(255,255,255,0.5);
-    }    
-    
-    p {      
-      color: white;    
-    }  
-    
-    .caixa {
-      background: rgba(20, 20, 20, 0.45); /* Um pouco mais escuro para destacar a fonte */
-      padding: 20px 40px;
-      border-radius: 30px;
-      box-shadow: 0px 0px 25px rgba(0,0,0,0.5);
-      text-align: center;
-      backdrop-filter: blur(15px);
-      border: 1px solid rgba(255,255,255,0.1);
-    }   
-
-    .caixa a {
-      display: block;
-      margin: 12px 0;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .evi {
-      position: fixed;
-      bottom: 0;
-      right: 0;
-      width: 100px;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
       height: auto;
+      z-index: -100;
+      object-fit: cover;
+    }
+
+    /* Camada escura por cima do vídeo para dar o clima sombrio e garantir leitura */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(5, 15, 25, 0.4);
+      z-index: -99;
+    }
+
+    /* Container Principal (Baseado na vibe de Captura de tela 2026-06-05 164438.jpg) */
+    .main-container {
+      background: rgba(6, 12, 20, 0.65);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(0, 229, 255, 0.2);
+      border-radius: 16px;
+      padding: 40px;
+      width: min(500px, 90vw);
+      text-align: center;
+      box-shadow: 0 0 35px rgba(0, 140, 255, 0.25);
+      transition: border-color 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .main-container:hover {
+      border-color: #008cff;
+      box-shadow: 0 0 40px rgba(0, 229, 255, 0.4);
+    }
+
+    /* Imagem do Eve-OwO aumentada em 50% */
+    .avatar {
+      width: 180px; /* Aumentado de ~120px para 180px (50% maior) */
+      height: auto;
+      border-radius: 50%;
+      border: 2px solid #00e5ff;
+      box-shadow: 0 0 20px rgba(0, 229, 255, 0.4);
+      margin-bottom: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .avatar:hover {
+      transform: scale(1.05) rotate(3deg);
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin: 0 0 10px 0;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      text-shadow: 0 0 15px rgba(0, 229, 255, 0.6);
+    }
+
+    .subtitle {
+      font-size: 1rem;
+      color: rgba(0, 229, 255, 0.7);
+      margin-bottom: 30px;
+      letter-spacing: 1px;
+    }
+
+    /* Menu de Abas em Lista */
+    .menu-links {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .menu-item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(0, 229, 255, 0.15);
+      border-radius: 8px;
+      padding: 14px 20px;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    .menu-item i {
+      color: #00e5ff;
+      font-size: 1.2rem;
+      width: 25px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    /* Hover no estilo azul fantasmagórico */
+    .menu-item:hover {
+      background: rgba(0, 140, 255, 0.15);
+      border-color: #00e5ff;
+      color: #00e5ff;
+      transform: translateX(5px);
+      box-shadow: 0 0 15px rgba(0, 229, 255, 0.2);
+    }
+
+    .menu-item:hover i {
+      transform: scale(1.2);
+    }
+
+    /* Rodapé Social */
+    .social-footer {
+      margin-top: 35px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 20px;
+    }
+
+    .social-footer a {
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 1.5rem;
+      transition: all 0.2s ease;
+    }
+
+    .social-footer a:hover {
+      color: #00e5ff;
+      transform: scale(1.15);
+      text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
     }
   </style>
 </head>
-<body> 
+<body>
 
-  <canvas id="canvas-basic"></canvas>
+  <!-- Elemento do Vídeo Animado (Certifique-se de deixar o arquivo 296664_medium.mp4 na mesma pasta do index) -->
+  <video autoplay loop muted playsinline class="bg-video">
+    <source src="296664_medium.mp4" type="video/mp4">
+    Seu navegador não suporta vídeos em segundo plano.
+  </video>
+  
+  <!-- Camada de ajuste de tom/cor do fundo -->
+  <div class="overlay"></div>
 
-  <h1>O site foda do Ghost</h1>
-
-  <div id="browser-warning" style="display: none; background: #2b2b2b; border: 1px solid #ff5555; color: white; padding: 10px; margin-bottom: 12px; margin-top: 12px; border-radius: 6px;">
-    ⚠️ i recommend browsers based on <strong>Firefox</strong> (ex.: Firefox, Mullvad, LibreWolf, Waterfox) for better privacy. ⚠️
-  </div>
-
-  <div class="caixa">
-    <a href="About/">About Me</a>
-    <a href="Coollinks/" target="_blank">Cool sites that i found</a>
-    <a href="oneshot___niko_by_thatguyfromkithro_dfvi01z.png" download>Download niko</a>
-    <a href="https://files.catbox.moe/32s3e0.reg" download>disable settings win10</a>
-    <a href="https://github.com/ghost77-coder/Site/issues/new" target="_blank">Report a bug!</a>
-    <a href="cpicker/" target="_blank">color picker</a>
-    <a href="coolapps/">cool apps that i found</a>
+  <!-- Card Central da Interface -->
+  <div class="main-container">
+    <!-- Imagem do avatar atualizada e redimensionada -->
+    <img src="eve-owo.png" alt="Ghost Avatar" class="avatar">
     
-    <p>you should really read the about page :3</p>
-    <p>pls report any bugs you find</p>
-    <p>Made with pure love by Ghost &hearts;</p>
+    <h1>GHOST</h1>
+    <div class="subtitle">Bem-vindo ao Submundo Tecnológico</div>
+
+    <!-- Links do menu totalmente traduzidos e configurados para as subpastas -->
+    <div class="menu-links">
+      <a href="docs/About/index.html" class="menu-item">
+        <i class="fa-solid fa-user-ghost"></i> Sobre Mim
+      </a>
+      
+      <a href="docs/My specs/index.html" class="menu-item">
+        <i class="fa-solid fa-microchip"></i> Meu Setup / Specs
+      </a>
+      
+      <a href="docs/coolapps/index.html" class="menu-item">
+        <i class="fa-solid fa-cubes"></i> Apps Úteis
+      </a>
+      
+      <a href="docs/Color Picker/index.html" class="menu-item">
+        <i class="fa-solid fa-eye-dropper"></i> Seletor de Cores
+      </a>
+
+      <a href="docs/themes.html" class="menu-item">
+        <i class="fa-solid fa-palette"></i> Temas Firefox
+      </a>
+    </div>
+
+    <!-- Redes sociais na parte inferior do painel -->
+    <div class="social-footer">
+      <a href="https://github.com/ghost77-coder" target="_blank"><i class="fa-brands fa-github"></i></a>
+      <a href="https://www.instagram.com/p3ter.7_7?igsh=MXdlYm9kb2Jpbzh2Zg==" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+    </div>
   </div>
-
-  <img class="evi" src="eve-owo.png" alt="eevee uwu">
-
-  <script src="https://cdn.jsdelivr.net/npm/granim@2.0.0/dist/granim.min.js"></script>
-  <script>
-    var granimInstance = new Granim({
-        element: '#canvas-basic',
-        direction: 'diagonal',
-        isPausedWhenNotInView: true,
-        states : {
-            "default-state": {
-                gradients: [
-                    ['#0096FF', '#C400FF'],
-                    ['#FAFF00', '#FF0000'],
-                    ['#0037FF', '#000000'],
-                    ['#000000', '#0037FF'],
-                    ['#009C08', '#0037FF']
-                ]
-            }
-        }
-    });
-
-    // Detecção do navegador
-    const ua = navigator.userAgent.toLowerCase();
-    const isFirefoxFamily = ua.includes("firefox");
-    if (!isFirefoxFamily) {
-      document.getElementById("browser-warning").style.display = "block";
-    }
-  </script>
 
 </body>
 </html>
