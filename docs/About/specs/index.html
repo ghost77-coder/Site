@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sobre o Ghost</title>
+  <title>Minhas Especificações</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   
   <style>
@@ -113,32 +113,45 @@
       overflow-y: auto;
     }
 
-    .btn-specs {
-      display: inline-block;
-      margin-top: 25px;
-      padding: 10px 20px;
-      font-weight: bold;
-      font-size: 15px;
-      color: #ff3333;
-      text-decoration: none;
-      border: 2px solid #ff3333;
-      border-radius: 8px;
-      background: transparent;
-      transition: all 0.3s ease;
+    /* Estilização dos Links de Arquivos (Páginas de Imagem) */
+    .links-lista {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 20px;
     }
-    
-    .btn-specs:hover {
-      color: #00ff66;
-      border-color: #00ff66;
-      background: rgba(0, 255, 102, 0.05);
-      box-shadow: 0px 0px 12px rgba(0, 255, 102, 0.4);
-      transform: translateY(-2px);
+
+    .spec-link {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(147, 51, 234, 0.3);
+      border-radius: 8px;
+      padding: 14px 20px;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: bold;
+      transition: all 0.25s ease;
+    }
+
+    .spec-link i {
+      color: #a855f7;
+      font-size: 1.2rem;
+    }
+
+    .spec-link:hover {
+      background: rgba(147, 51, 234, 0.15);
+      border-color: #a855f7;
+      color: #a855f7;
+      transform: translateX(5px);
+      box-shadow: 0 0 15px rgba(147, 51, 234, 0.2);
     }
 
     .window-content::-webkit-scrollbar { width: 5px; }
     .window-content::-webkit-scrollbar-track { background: rgba(255, 255, 255, 0.03); }
     .window-content::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.12); border-radius: 20px; }
-    .window-content::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.2); }
 
     .home-btn {
       text-decoration: none;
@@ -162,7 +175,7 @@
 
   <div class="window">
     <div class="window-titlebar">
-      <div class="window-title">Sobre o Ghost</div>
+      <div class="window-title">Especificações do Sistema</div>
       <div class="window-controls">
         <span class="btn min"></span>
         <span class="btn max"></span>
@@ -171,9 +184,16 @@
     </div>
 
     <div class="window-content">
-      <p>Sou um cara curioso, gosto de mexer em tecnologia, jogos e programação, sempre procurando um jeito de aprender algo novo ou resolver um problema na raça. Curto jogos como Astroneer, Euro Truck Simulator 2, People Playground, Brick Rigs e Gang Beasts, além de gostar de testar mods e personalizações. Tenho um notebook Acer Nitro V15 e gosto de fuçar configurações para tirar o máximo desempenho possível. Também me interesso por Linux, embora hoje não seja meu sistema principal. No geral, sou alguém que aprende experimentando, faz muitas perguntas, dá umas risadas no caminho e não tem medo de quebrar a cabeça até descobrir como algo funciona.</p>
+      <p style="margin-bottom: 20px; color: rgba(255,255,255,0.6);">Selecione um relatório para visualizar os prints de hardware do Acer Nitro V15:</p>
       
-      <a href="specs/index.html" class="btn-specs">➔ Acesse as especificações do meu setup</a>
+      <div class="links-lista">
+        <a href="spec.jpg" class="spec-link" target="_blank">
+          <i class="fa-solid fa-file-image"></i> Meu PC - Relatório Página 1
+        </a>
+        <a href="spec2.png" class="spec-link" target="_blank">
+          <i class="fa-solid fa-file-image"></i> Meu PC - Relatório Página 2
+        </a>
+      </div>
     </div>
   </div>
 
@@ -182,7 +202,7 @@
       <a href="https://github.com/ghost77-coder" target="_blank"><i class="fa-brands fa-github"></i></a>
       <a href="https://www.instagram.com/p3ter.7_7?igsh=MXdlYm9kb2Jpbzh2Zg==" target="_blank"><i class="fa-brands fa-instagram"></i></a>
     </div>
-    <a href="../index.html" class="home-btn">Voltar para a Página Inicial</a>
+    <a href="../../index.html" class="home-btn">Voltar para a Página Inicial</a>
   </div>
 
 </body>
