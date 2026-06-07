@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Temas de Navegador // Ghost</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    /* =======================================================
+       🎨 CONFIGURAÇÃO DE CORES DINÂMICAS
+       ======================================================= */
+    :root {
+      --cor-principal: #a855f7; /* Roxo padrão */
+      --cor-hover: #00ff66;
+      --border-box: rgba(255, 255, 255, 0.08);
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      padding-bottom: 60px;
+      font-family: system-ui, -apple-system, sans-serif;
+      color: white;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #000000, #1a001a);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .btn-back {
+      display: inline-block;   
+      padding: 10px 20px;              
+      background: #0c0014;             
+      color: var(--cor-principal);
+      text-decoration: none;      
+      border: 2px solid var(--cor-principal);
+      border-radius: 8px;              
+      font-weight: bold;
+      margin: 30px 0;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    .btn-back:hover {
+      color: var(--cor-hover);
+      border-color: var(--cor-hover);
+      background: rgba(0, 255, 102, 0.05);
+      box-shadow: 0px 0px 12px var(--cor-hover);
+      transform: scale(1.05);
+    }
+
+    .container { width: min(900px, 95vw); display: flex; flex-direction: column; gap: 30px; }
+
+    .category-box {
+      background: rgba(15, 15, 20, 0.40);
+      backdrop-filter: blur(14px);
+      border: 1px solid var(--border-box);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .category-box h2 {
+      margin-top: 0; margin-bottom: 15px; font-size: 18px;
+      color: var(--cor-principal);
+      border-bottom: 1px solid var(--cor-principal)33;
+      padding-bottom: 8px; display: flex; align-items: center; gap: 10px;
+    }
+
+    .links-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
+
+    .theme-link {
+      display: flex; flex-direction: column; align-items: center;
+      justify-content: center; gap: 8px; padding: 20px 12px;
+      background: rgba(0, 0, 0, 0.4); color: #e0e0e0;
+      text-decoration: none; border: 1px solid var(--cor-principal)33;
+      border-radius: 8px; font-size: 14px; font-weight: 500;
+      transition: all 0.2s ease; text-align: center;
+    }
+
+    .theme-link i { font-size: 24px; color: var(--cor-principal); transition: transform 0.2s ease; }
+
+    .theme-link:hover {
+      color: var(--cor-hover); border-color: var(--cor-hover);
+      background: rgba(0, 255, 102, 0.04); transform: translateY(-3px);
+      box-shadow: 0 4px 12px rgba(0, 255, 102, 0.15);
+    }
+    .theme-link:hover i { color: var(--cor-hover); transform: scale(1.1); }
+  </style>
+</head>
+<body>
+
+  <a href="../index.html" class="btn-back"><i class="fa-solid fa-arrow-left"></i> Voltar para a Página Inicial</a>
+
+  <div class="container">
+    <div class="category-box">
+      <h2><i class="fa-solid fa-palette"></i> Ferramentas e Sites para Customizar o Navegador</h2>
+      <div class="links-grid">
+        <a href="https://color.firefox.com" target="_blank" class="theme-link">
+          <i class="fa-brands fa-firefox-browser"></i>
+          <span>Firefox Color (Criar Temas)</span>
+        </a>
+        <a href="https://github.com/vinceliuice/Lavanda-firefox-theme" target="_blank" class="theme-link">
+          <i class="fa-brands fa-github"></i>
+          <span>Tema Lavanda (Firefox Moderno)</span>
+        </a>
+        <a href="https://chrome.google.com/webstore/category/themes" target="_blank" class="theme-link">
+          <i class="fa-brands fa-chrome"></i>
+          <span>Chrome Web Store Temas</span>
+        </a>
+        <a href="https://userstyles.org" target="_blank" class="theme-link">
+          <i class="fa-solid fa-code"></i>
+          <span>Stylish / UserStyles (Mudar Sites)</span>
+        </a>
+        <a href="https://github.com/maimmou/awesome-firefox-customization" target="_blank" class="theme-link">
+          <i class="fa-solid fa-wand-magic-sparkles"></i>
+          <span>Awesome Firefox Customization</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const savedColor = localStorage.getItem('ghost-theme-color');
+      if (savedColor) {
+        document.documentElement.style.setProperty('--cor-principal', savedColor);
+        // Atualiza a borda e o fundo para refletir a escolha
+        document.documentElement.style.setProperty('--border-box', savedColor + "22");
+      }
+    });
+  </script>
+</body>
+</html>

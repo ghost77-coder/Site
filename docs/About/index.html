@@ -7,9 +7,20 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   
   <style>
+    /* =======================================================
+       🎨 CONFIGURAÇÃO DE CORES DA PÁGINA (VISUAL DE FÁBRICA)
+       ======================================================= */
+    :root {
+      --cor-principal: #ff3333; /* Vermelho padrão do botão */
+      --cor-hover: #00ff66;     /* Verde padrão do hover */
+      --border-window: rgba(255, 255, 255, 0.08); /* Borda padrão */
+      --cor-fundo-gradiente: #25003b; /* Roxo escuro padrão do fundo */
+    }
+
     body {
       display: block;
-      background: linear-gradient(135deg, #000000, #25003b);
+      /* CORRIGIDO: O segundo ponto do gradiente agora é uma variável dinâmica */
+      background: linear-gradient(135deg, #000000, var(--cor-fundo-gradiente));
       background-repeat: no-repeat;
       background-size: cover;
       min-height: 100vh;
@@ -46,7 +57,7 @@
     }
 
     .socials a:hover {
-      color: rgba(255, 255, 255, 1);
+      color: var(--cor-hover);
       transform: scale(1.12);
     }
     
@@ -55,12 +66,13 @@
       height: min(480px, 85vh);
       margin: 40px auto;
       border-radius: 10px;
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--border-window);
       background: rgba(15, 15, 20, 0.40);
       backdrop-filter: blur(14px);
       box-shadow: 0 5px 20px rgba(0, 0, 0, 0.6);
       overflow: hidden;
       font-family: system-ui, sans-serif;
+      transition: border-color 0.3s ease;
     }
 
     .window-titlebar {
@@ -119,19 +131,19 @@
       padding: 10px 20px;
       font-weight: bold;
       font-size: 15px;
-      color: #ff3333;
+      color: var(--cor-principal);
       text-decoration: none;
-      border: 2px solid #ff3333;
+      border: 2px solid var(--cor-principal);
       border-radius: 8px;
       background: transparent;
       transition: all 0.3s ease;
     }
     
     .btn-specs:hover {
-      color: #00ff66;
-      border-color: #00ff66;
+      color: var(--cor-hover);
+      border-color: var(--cor-hover);
       background: rgba(0, 255, 102, 0.05);
-      box-shadow: 0px 0px 12px rgba(0, 255, 102, 0.4);
+      box-shadow: 0px 0px 12px var(--cor-hover);
       transform: translateY(-2px);
     }
 
@@ -154,6 +166,7 @@
 
     .home-btn:hover {
       background: rgba(255, 255, 255, 0.14);
+      border-color: var(--cor-hover);
       transform: scale(1.04);
     }
   </style>
@@ -184,6 +197,22 @@
     </div>
     <a href="../index.html" class="home-btn">Voltar para a Página Inicial</a>
   </div>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const savedColor = localStorage.getItem('ghost-theme-color');
+      if (savedColor) {
+        document.documentElement.style.setProperty('--cor-principal', savedColor);
+        document.documentElement.style.setProperty('--cor-hover', savedColor);
+        document.documentElement.style.setProperty('--border-window', savedColor);
+        
+        // CORRIGIDO: Transforma a cor do seletor em um tom escuro e aplica no fundo
+        // O truque aqui é colocar a cor escolhida com 15% de opacidade (24 em hexadecimal)
+        const darkBackgroundTone = savedColor + "24"; 
+        document.documentElement.style.setProperty('--cor-fundo-gradiente', darkBackgroundTone);
+      }
+    });
+  </script>
 
 </body>
 </html>

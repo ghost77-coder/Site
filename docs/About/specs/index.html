@@ -7,9 +7,19 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   
   <style>
+    /* =======================================================
+       🎨 CONFIGURAÇÃO DE CORES DA PÁGINA (VISUAL DE FÁBRICA)
+       ======================================================= */
+    :root {
+      --cor-principal: #9333ea; /* Roxo padrão das bordas */
+      --cor-hover: #a855f7;     /* Roxo claro padrão do hover/ícones */
+      --border-window: rgba(255, 255, 255, 0.08); /* Borda padrão da janela */
+      --cor-fundo-gradiente: #25003b; /* Roxo escuro padrão do fundo */
+    }
+
     body {
       display: block;
-      background: linear-gradient(135deg, #000000, #25003b);
+      background: linear-gradient(135deg, #000000, var(--cor-fundo-gradiente));
       background-repeat: no-repeat;
       background-size: cover;
       min-height: 100vh;
@@ -46,7 +56,7 @@
     }
 
     .socials a:hover {
-      color: rgba(255, 255, 255, 1);
+      color: var(--cor-hover); /* Segue a cor dinâmica */
       transform: scale(1.12);
     }
     
@@ -55,12 +65,13 @@
       height: min(480px, 85vh);
       margin: 40px auto;
       border-radius: 10px;
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--border-window); /* Dinâmico */
       background: rgba(15, 15, 20, 0.40);
       backdrop-filter: blur(14px);
       box-shadow: 0 5px 20px rgba(0, 0, 0, 0.6);
       overflow: hidden;
       font-family: system-ui, sans-serif;
+      transition: border-color 0.3s ease;
     }
 
     .window-titlebar {
@@ -113,7 +124,7 @@
       overflow-y: auto;
     }
 
-    /* Estilização dos Links de Arquivos (Páginas de Imagem) */
+    /* Estilização dos Links de Hardware */
     .links-lista {
       display: flex;
       flex-direction: column;
@@ -127,6 +138,7 @@
       gap: 15px;
       background: rgba(0, 0, 0, 0.4);
       border: 1px solid rgba(147, 51, 234, 0.3);
+      border-color: var(--cor-principal); /* Dinâmico */
       border-radius: 8px;
       padding: 14px 20px;
       color: #ffffff;
@@ -137,16 +149,16 @@
     }
 
     .spec-link i {
-      color: #a855f7;
+      color: var(--cor-hover); /* Dinâmico */
       font-size: 1.2rem;
     }
 
     .spec-link:hover {
       background: rgba(147, 51, 234, 0.15);
-      border-color: #a855f7;
-      color: #a855f7;
+      border-color: var(--cor-hover); /* Dinâmico */
+      color: var(--cor-hover); /* Dinâmico */
       transform: translateX(5px);
-      box-shadow: 0 0 15px rgba(147, 51, 234, 0.2);
+      box-shadow: 0 0 15px var(--cor-hover); /* Brilho dinâmico */
     }
 
     .window-content::-webkit-scrollbar { width: 5px; }
@@ -167,6 +179,7 @@
 
     .home-btn:hover {
       background: rgba(255, 255, 255, 0.14);
+      border-color: var(--cor-hover); /* Dinâmico */
       transform: scale(1.04);
     }
   </style>
@@ -204,6 +217,21 @@
     </div>
     <a href="../../index.html" class="home-btn">Voltar para a Página Inicial</a>
   </div>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const savedColor = localStorage.getItem('ghost-theme-color');
+      if (savedColor) {
+        document.documentElement.style.setProperty('--cor-principal', savedColor);
+        document.documentElement.style.setProperty('--cor-hover', savedColor);
+        document.documentElement.style.setProperty('--border-window', savedColor);
+        
+        // Mantém a pegada sutil do fundo usando a cor global
+        const darkBackgroundTone = savedColor + "24"; 
+        document.documentElement.style.setProperty('--cor-fundo-gradiente', darkBackgroundTone);
+      }
+    });
+  </script>
 
 </body>
 </html>
