@@ -2,20 +2,19 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=0.9">
   <title>Ghost Central // Home</title>
   
-  <!-- Font Awesome para ícones irados -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body {
-      margin: 0;
-      padding: 0;
       font-family: 'Courier New', Courier, monospace;
       color: #00e5ff;
       min-height: 100vh;
@@ -24,6 +23,7 @@
       align-items: center;
       justify-content: center;
       overflow-x: hidden;
+      background-color: #050f19;
     }
 
     /* Configuração do Vídeo de Fundo Animado */
@@ -39,26 +39,28 @@
       object-fit: cover;
     }
 
-    /* Camada escura por cima do vídeo para dar o clima sombrio e garantir leitura */
+    /* Camada escura por cima do vídeo */
     .overlay {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(5, 15, 25, 0.4);
+      background: rgba(5, 15, 25, 0.55);
       z-index: -99;
     }
 
-    /* Container Principal (Baseado na vibe de Captura de tela 2026-06-05 164438.jpg) */
+    /* Container Principal - Compacto */
     .main-container {
-      background: rgba(6, 12, 20, 0.65);
+      position: relative;
+      z-index: 10;
+      background: rgba(6, 12, 20, 0.75);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       border: 1px solid rgba(0, 229, 255, 0.2);
       border-radius: 16px;
-      padding: 40px;
-      width: min(500px, 90vw);
+      padding: 25px 30px;
+      width: min(420px, 92vw);
       text-align: center;
       box-shadow: 0 0 35px rgba(0, 140, 255, 0.25);
       transition: border-color 0.4s ease, box-shadow 0.4s ease;
@@ -69,14 +71,14 @@
       box-shadow: 0 0 40px rgba(0, 229, 255, 0.4);
     }
 
-    /* Imagem do Eve-OwO aumentada em 50% */
+    /* Imagem do Eve-OwO */
     .avatar {
-      width: 180px; /* Aumentado de ~120px para 180px (50% maior) */
+      width: 140px;
       height: auto;
       border-radius: 50%;
       border: 2px solid #00e5ff;
       box-shadow: 0 0 20px rgba(0, 229, 255, 0.4);
-      margin-bottom: 20px;
+      margin-bottom: 15px;
       transition: transform 0.3s ease;
     }
 
@@ -85,8 +87,8 @@
     }
 
     h1 {
-      font-size: 2.2rem;
-      margin: 0 0 10px 0;
+      font-size: 1.8rem;
+      margin-bottom: 5px;
       color: #ffffff;
       text-transform: uppercase;
       letter-spacing: 3px;
@@ -94,46 +96,45 @@
     }
 
     .subtitle {
-      font-size: 1rem;
+      font-size: 0.85rem;
       color: rgba(0, 229, 255, 0.7);
-      margin-bottom: 30px;
+      margin-bottom: 20px;
       letter-spacing: 1px;
     }
 
-    /* Menu de Abas em Lista */
+    /* Menu de Links */
     .menu-links {
       display: flex;
       flex-direction: column;
-      gap: 15px;
+      gap: 10px;
     }
 
     .menu-item {
       display: flex;
       align-items: center;
       gap: 15px;
-      background: rgba(0, 0, 0, 0.4);
+      background: rgba(0, 0, 0, 0.5);
       border: 1px solid rgba(0, 229, 255, 0.15);
       border-radius: 8px;
-      padding: 14px 20px;
+      padding: 12px 18px;
       color: #ffffff;
       text-decoration: none;
-      font-size: 1.1rem;
+      font-size: 0.95rem;
       font-weight: bold;
       letter-spacing: 1px;
-      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
     }
 
     .menu-item i {
       color: #00e5ff;
-      font-size: 1.2rem;
-      width: 25px;
+      font-size: 1.1rem;
+      width: 20px;
       text-align: center;
       transition: transform 0.3s ease;
     }
 
-    /* Hover no estilo azul fantasmagórico */
     .menu-item:hover {
-      background: rgba(0, 140, 255, 0.15);
+      background: rgba(0, 140, 255, 0.2);
       border-color: #00e5ff;
       color: #00e5ff;
       transform: translateX(5px);
@@ -146,17 +147,17 @@
 
     /* Rodapé Social */
     .social-footer {
-      margin-top: 35px;
+      margin-top: 25px;
       display: flex;
       justify-content: center;
       gap: 20px;
       border-top: 1px solid rgba(255, 255, 255, 0.08);
-      padding-top: 20px;
+      padding-top: 15px;
     }
 
     .social-footer a {
       color: rgba(255, 255, 255, 0.6);
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       transition: all 0.2s ease;
     }
 
@@ -169,27 +170,21 @@
 </head>
 <body>
 
-  <!-- Elemento do Vídeo Animado (Certifique-se de deixar o arquivo 296664_medium.mp4 na mesma pasta do index) -->
   <video autoplay loop muted playsinline class="bg-video">
     <source src="296664_medium.mp4" type="video/mp4">
-    Seu navegador não suporta vídeos em segundo plano.
   </video>
   
-  <!-- Camada de ajuste de tom/cor do fundo -->
   <div class="overlay"></div>
 
-  <!-- Card Central da Interface -->
   <div class="main-container">
-    <!-- Imagem do avatar atualizada e redimensionada -->
     <img src="eve-owo.png" alt="Ghost Avatar" class="avatar">
     
     <h1>GHOST</h1>
     <div class="subtitle">Bem-vindo ao Submundo Tecnológico</div>
 
-    <!-- Links do menu totalmente traduzidos e configurados para as subpastas -->
     <div class="menu-links">
       <a href="docs/About/index.html" class="menu-item">
-        <i class="fa-solid fa-user-ghost"></i> Sobre Mim
+        <i class="fa-solid fa-ghost"></i> Sobre Mim
       </a>
       
       <a href="docs/My specs/index.html" class="menu-item">
@@ -200,7 +195,7 @@
         <i class="fa-solid fa-cubes"></i> Apps Úteis
       </a>
       
-      <a href="docs/Color Picker/index.html" class="menu-item">
+      <a href="docs/cpicker/index.html" class="menu-item">
         <i class="fa-solid fa-eye-dropper"></i> Seletor de Cores
       </a>
 
@@ -209,7 +204,6 @@
       </a>
     </div>
 
-    <!-- Redes sociais na parte inferior do painel -->
     <div class="social-footer">
       <a href="https://github.com/ghost77-coder" target="_blank"><i class="fa-brands fa-github"></i></a>
       <a href="https://www.instagram.com/p3ter.7_7?igsh=MXdlYm9kb2Jpbzh2Zg==" target="_blank"><i class="fa-brands fa-instagram"></i></a>
